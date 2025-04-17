@@ -77,11 +77,3 @@ Ensure Python extension is installed.
 Select the Python interpreter (from virtual environment if created).
 Right-click pricing_engine.py and select "Run Python File in Terminal".
 View the output in the output/updated_prices.csv file.
-
-Submission
-
-Zip the entire pricing_engine/ folder.
-Submit via the provided Google Form link before the deadline (19th Apr, 2025, 11:55 PM).
-
-Contact
-For any clarification, please reach out via the challenge submission platform.
