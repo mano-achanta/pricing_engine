@@ -1,79 +1,111 @@
-Pricing Engine Solution
-Overview
-This project implements a pricing engine that adjusts product prices based on inventory levels and sales performance, following the specified rules for the Thrd Coding Challenge.
-Project Structure
+
+## 📁 Project Structure
+
+```
 pricing_engine/
 ├── data/
 │   ├── products.csv        # Input: Product catalog
-│   └── sales.csv          # Input: Sales data
+│   └── sales.csv           # Input: Sales data
 ├── output/
 │   └── updated_prices.csv  # Output: Updated prices
-├── pricing_engine.py      # Main Python script
-├── README.md              # Project documentation
-└── requirements.txt       # Dependencies
+├── pricing_engine.py       # Main Python script
+├── README.md               # Project documentation
+└── requirements.txt        # Dependencies
+```
 
-Setup Instructions
+---
 
-Clone the Repository:
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+```bash
 git clone <repository-url>
 cd pricing_engine
+```
 
-
-Create Virtual Environment (Optional but recommended):
+### 2. Create Virtual Environment (Recommended)
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-
-Install Dependencies:
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
+### 4. Place Input Files
 
-Place Input Files:
+Ensure `products.csv` and `sales.csv` are located inside the `data/` directory.  
+➡️ These files are already provided in the project.
 
-Ensure products.csv and sales.csv are in the data/ directory.
-The provided CSV files are already included in the data/ directory.
+---
 
+## 🚀 Run the Script
 
-Run the Script:
+```bash
 python pricing_engine.py
+```
 
+---
 
-Check Output:
+## 📦 Check Output
 
-The output file updated_prices.csv will be generated in the output/ directory.
+After running the script, the updated prices will be saved in:
+```
+output/updated_prices.csv
+```
 
+---
 
+## 🧩 Dependencies
 
-Dependencies
+- Python 3.8+
+- pandas
 
-Python 3.8+
-pandas
+---
 
-Implementation Details
+## 🛠 Implementation Details
 
-File Loading: Uses pandas to read CSV files with validation for required columns.
-Pricing Rules: Applied in specified order (Low Stock, Dead Stock, Overstocked, Minimum Profit).
-Output: Generates updated_prices.csv with columns sku, old_price (USD), new_price (USD).
-Error Handling: Includes checks for file existence and column validation.
-Rounding: All prices are rounded to 2 decimal places as specified.
+- **File Loading**: Uses `pandas` to read CSV files with validation for required columns.
+- **Pricing Rules**:
+  - Low Stock
+  - Dead Stock
+  - Overstocked
+  - Minimum Profit
+- **Output**: CSV file with columns `sku`, `old_price (USD)`, and `new_price (USD)`.
+- **Error Handling**: File and column checks are included.
+- **Rounding**: Prices are rounded to 2 decimal places.
 
-Assumptions
+---
 
-Input CSV files are well-formed and contain the specified columns.
-Prices are in USD (unit explicitly mentioned in output).
-Missing sales data for a product implies zero sales (handled by filling NaN with 0).
+## 📌 Assumptions
 
-Example Output
-Based on the provided input files:
+- Input CSVs are well-formed and contain required fields.
+- All prices are in **USD** (explicitly stated in output).
+- Products with missing sales data are assumed to have **zero sales**.
+
+---
+
+## 📋 Example Output
+
+Sample output in `updated_prices.csv`:
+
+```
 sku,old_price (USD),new_price (USD)
 A123,649.99,600.0
 B456,699.0,803.85
 C789,999.0,899.1
+```
 
-Running in VS Code
+---
 
-Open the project folder in VS Code.
-Ensure Python extension is installed.
-Select the Python interpreter (from virtual environment if created).
-Right-click pricing_engine.py and select "Run Python File in Terminal".
-View the output in the output/updated_prices.csv file.
+## 🖥 Running in VS Code
+
+1. Open the folder in VS Code.
+2. Ensure the **Python extension** is installed.
+3. Select the appropriate **Python interpreter**.
+4. Right-click `pricing_engine.py` and choose **"Run Python File in Terminal"**.
+5. Check the output file: `output/updated_prices.csv`.
+
+---
